@@ -1,11 +1,16 @@
-
 /**
  * Inserts a certain character until a has the desired length
  * e.g. padLeft('foo', 5, '_') -> '__foo'
  * e.g. padLeft(  '2', 2, '0')   -> '02'
  */
+
+// module.exports = (val, num, str) => {
+//   return "00000".replace(/0/g, str).slice(0, num - val.length) + val;
+// };
+
 function padLeft(val, num, str) {
-	return '00000'.replace(/0/g, str).slice(0, num - val.length) + val;
+  return "00000".replace(/0/g, str).slice(0, num - val.length) + val;
 }
 
+module.exports = padLeft;
 // YOUR CODE GOES HERE

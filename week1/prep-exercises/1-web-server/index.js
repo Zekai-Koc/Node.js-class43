@@ -1,2 +1,4 @@
-const contentElement = document.getElementById('content');
-contentElement.textContent = 'Welcome to Server-land!';
+const contentElement = document.getElementById("content");
+contentElement.textContent = "Welcome to Server-land!";
+
+console.log("ffffffffffffff");
