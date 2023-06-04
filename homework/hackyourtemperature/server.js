@@ -1,23 +1,48 @@
-import express, { json } from "express";
+import app from "./app.js";
 
-const app = express();
+app.listen(3000, () => console.log(`Listening on port: 3000`));
 
-app.use(express.json());
+// import express, { json } from "express";
+// import { keys } from "./sources/keys.js";
+// import fetch from "node-fetch";
 
-app.get("/", function (req, res) {
-  res.status(200).send("hello from backend to frontend!");
-});
+// const app = express();
 
-app.post("/weather", function (req, res) {
-  const { cityName } = req.body;
+// app.use(express.json());
 
-  if (!cityName) {
-    res.send("no city posted!");
-    return; // should i add this return for my following console.log not to print "undefined"?
-  }
+// app.get("/", function (req, res) {
+//    res.status(200).send("hello from backend to frontend!");
+// });
 
-  console.log(cityName);
-  res.send(cityName);
-});
+// app.post("/weather", async function (req, res) {
+//    const { cityName } = req.body;
 
-app.listen(3000);
+//    if (!cityName) {
+//       res.send("no city posted!");
+//       return;
+//    }
+
+//    const baseUrl = "https://api.openweathermap.org/data/2.5/";
+//    const queryParams = `weather?q=${cityName}&appid=${keys.API_KEY}&units=metric`;
+
+//    const response = await fetch(baseUrl + queryParams);
+//    const data = await response.json();
+
+//    if (data.cod === "404") {
+//       const repToUser = {
+//          weatherText: "City is not found!",
+//          searchCity: cityName,
+//       };
+//       console.log(repToUser);
+//       res.send(repToUser);
+//    } else {
+//       const repToUser = {
+//          weatherText: data.main.temp,
+//          searchCity: data.name,
+//       };
+//       console.log(repToUser);
+//       res.send(repToUser);
+//    }
+// });
+
+// app.listen(3000, () => console.log(`Listening on port: 3000`));
