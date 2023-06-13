@@ -15,7 +15,7 @@ app.post("/weather", async function (req, res) {
    const { cityName } = req.body;
 
    if (!cityName) {
-      res.status(405).send(`Bad request! \n ${JSON.stringify(req.body)}`);
+      res.status(404).send(`Bad request! \n ${JSON.stringify(req.body)}`);
       return;
    }
 
